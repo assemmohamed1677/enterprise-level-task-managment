@@ -1,126 +1,90 @@
-# Angular Task Management System
+﻿# Enterprise Level Task Management
 
-> A modern, scalable task management web application built with **Angular 17+ Standalone Components Architecture**.
+A clean Angular task management app built with standalone components. The app lets you select a user, view their assigned tasks, add new tasks with a due date, complete tasks, and keep task data saved in the browser with `localStorage`.
 
-[![Angular](https://img.shields.io/badge/Angular-17+-DD0031?style=flat-square&logo=angular&logoColor=white)](https://angular.io/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![RxJS](https://img.shields.io/badge/RxJS-7.x-B7178C?style=flat-square&logo=reactivex&logoColor=white)](https://rxjs.dev/)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://enterprise-level-task-managment-akt.vercel.app/)
+## Live Demo
 
----
+[View the deployed app on Vercel](https://enterprise-level-task-managment-akt.vercel.app/)
 
-## 🌐 Live Demo
+## Features
 
-**[→ View Live on Vercel](https://enterprise-level-task-managment-akt.vercel.app/)**
+- User selection with active user highlighting
+- Per-user task lists
+- Add tasks with title, summary, and due date
+- Complete/delete tasks from the list
+- Task persistence with browser `localStorage`
+- Reusable card component
+- Standalone Angular component architecture
+- Responsive task-focused layout
 
----
+## Tech Stack
 
-## ✨ Features
+- Angular 18
+- TypeScript
+- CSS
+- Angular standalone components
+- Vercel deployment
 
-| Feature | Description |
-|---|---|
-| ➕ Create Tasks | Add new tasks with a title, summary, and due date |
-| 📋 View Tasks | Display all tasks in a clean, organized UI |
-| 🗑️ Delete Tasks | Remove tasks dynamically without page reload |
-| ⚡ Standalone Architecture | Built without `AppModule` using Angular's modern standalone API |
-| 🔄 Reactive Data Flow | State management powered by RxJS |
-| 📱 Responsive Design | Mobile-friendly and adaptive layout |
-| 🧩 Modular Components | Reusable and self-contained component structure |
+## Project Structure
 
----
-
-## 🛠️ Tech Stack
-
-- **Framework:** Angular 17+
-- **Language:** TypeScript
-- **Styling:** CSS3 / Bootstrap
-- **Reactive Programming:** RxJS
-- **Architecture:** Standalone Components (No NgModule)
-- **Deployment:** Vercel
-
----
-
-## 📁 Project Structure
-
-```
+```text
 src/
-├── app/
-│   ├── tasks/          # Task list component
-│   ├── task/           # Single task card component
-│   ├── services/       # Task service (state management)
-│   ├── shared/         # Shared utilities and components
-│   ├── app.component.ts
-│   └── app.routes.ts
-├── assets/             # Static assets
-└── main.ts             # Application bootstrap
+  app/
+    header/              App header
+    shared/card/         Reusable card wrapper
+    tasks/               Task list, task item, new task form, and task service
+    user/                User card component
+    app.component.*      Root app component
+    dummy-users.ts       Demo user data
+  assets/                Images and static assets
+  main.ts                Application bootstrap
 ```
 
----
+## Getting Started
 
-## ⚙️ Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) v18+
-- [Angular CLI](https://angular.io/cli) v17+
-
-### Installation
-
-**1. Clone the repository**
-
-```bash
-git clone https://github.com/assem/angular-task-management.git
-cd angular-task-management
-```
-
-**2. Install dependencies**
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-**3. Start the development server**
+Start the development server:
 
 ```bash
-ng serve
+npm start
 ```
 
-**4. Open in browser**
+Open:
 
-Navigate to `http://localhost:4200/`
+```text
+http://localhost:4200/
+```
 
----
+## Build
 
-## 🔮 Roadmap
+```bash
+npm run build
+```
 
-- [ ] ✏️ Edit and update existing tasks
-- [ ] 🔎 Search and filter tasks
-- [ ] 📊 Dashboard with task statistics and charts
-- [ ] 🔐 Authentication system (Login / Register)
-- [ ] 💾 Backend API integration (Node.js / NestJS)
-- [ ] 🗄️ Database persistence (MongoDB / PostgreSQL)
+The production build is generated in:
 
----
+```text
+dist/essentials
+```
 
-## 🎯 Purpose
+## Tests
 
-This project was built to practice and demonstrate modern Angular development concepts, including:
+```bash
+npm test -- --watch=false --browsers=ChromeHeadless
+```
 
-- **Component-Based Architecture** — building UIs from isolated, reusable pieces
-- **Standalone Components API** — Angular 17+ approach without NgModules
-- **Reactive State Management** — using RxJS and services to manage application state
-- **Scalable Project Structure** — organizing code for maintainability and growth
+## Recent Improvements
 
----
+- Blocked empty task submissions
+- Fixed the task owner heading text
+- Added safer browser storage handling
+- Added proper task date metadata for better HTML semantics
 
-## 👨‍💻 Author
+## Author
 
-**Assem**
-- 🎓 Electrical & Communication Engineering Graduate
-- 💻 Aspiring Software Engineer (Frontend / Full Stack)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+Assem Mohamed

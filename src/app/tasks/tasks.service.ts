@@ -1,4 +1,3 @@
-import { filter } from "rxjs"
 import { NewTaskData } from "./task/task.model"
 import { Injectable } from "@angular/core"
 
@@ -32,6 +31,10 @@ export class taskService {
     ]
 
     constructor (){
+      if (!this.isBrowser()) {
+        return;
+      }
+
         const tasks = localStorage.getItem('tasks')
 
         if (tasks){
@@ -48,7 +51,7 @@ this.tasks.push({
 id: new Date().getTime().toString(),
   userId:userId,
   title:taskData.title,
-  dueDate:taskData.Date,
+  dueDate:taskData.dueDate,
   summary:taskData.summary})
   this.saveTask()
 }
@@ -58,7 +61,15 @@ removeTask(taskId: string) {
 }
 
 private saveTask (){
+  if (!this.isBrowser()) {
+    return;
+  }
+
     localStorage.setItem ('tasks', JSON.stringify(this.tasks))
+}
+
+private isBrowser(){
+  return typeof localStorage !== 'undefined'
 }
 
 }

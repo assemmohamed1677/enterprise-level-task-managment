@@ -27,10 +27,14 @@ cancelTask(){
 }
 
 onSubmit(){
+if (!this.enteredTitle.trim() || !this.enteredSummary.trim() || !this.enteredDate) {
+  return;
+}
+
 this.taskService.addTask({
-   title : this.enteredTitle,
-  summary : this.enteredSummary,
-  Date: this.enteredDate
+   title : this.enteredTitle.trim(),
+  summary : this.enteredSummary.trim(),
+  dueDate: this.enteredDate
 }, this.userId)
 this.close.emit()
 }
